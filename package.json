@@ -2,7 +2,7 @@
   "name": "react-request-hook-client",
   "version": "0.0.1",
   "description": "A fetch based, declarative and hook powered to make HTTP request in React.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "keywords": [
     "react",
     "react hooks",
