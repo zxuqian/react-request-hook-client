@@ -1,4 +1,6 @@
 React Request Hook Client
 =========================
 
-## Introduction
+A fetch based, declarative and hook powered to make HTTP request in React.
+
+
