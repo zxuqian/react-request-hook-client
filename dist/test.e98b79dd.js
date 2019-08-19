@@ -31669,6 +31669,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 /**
  * 
  * From react-boilerplate
+ * https://github.com/react-boilerplate/react-boilerplate
  * 
  * Parses the JSON returned by a network request
  *

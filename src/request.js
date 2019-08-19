@@ -1,6 +1,7 @@
 /**
  * 
  * From react-boilerplate
+ * https://github.com/react-boilerplate/react-boilerplate
  * 
  * Parses the JSON returned by a network request
  *
