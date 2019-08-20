@@ -22,7 +22,7 @@ React >= 16.8.0
 
 ## Get Started
 
-### &lt;Request /&gt; component
+### use &lt;Request /&gt; component
 
 See live example on CodeSandBox:
 
