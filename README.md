@@ -176,7 +176,7 @@ The function **MUST** return a single enclosed React component according to the 
 
 ### useRequest hook
 
-The `useRequest` hook takes the same props/arguments as Request component, and return the following object upon using:
+The `useRequest` hook takes the same props/arguments as Request component does, and returns the following object upon using:
 
 ```javascript
   const { loading, error, data, doRequest } = useRequest({url:, variables:, ...})
