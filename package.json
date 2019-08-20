@@ -1,31 +1,41 @@
 {
   "name": "react-request-hook-client",
-  "version": "0.0.1-alpha2",
+  "version": "0.0.1-alpha3",
   "description": "A fetch based, declarative and hook powered to make HTTP request in React.",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "prepublishOnly": "npm run build",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "nwb": "0.23.x",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "author": "Xuqian Zhang",
+  "homepage": "http://www.zxuqian.cn",
+  "license": "MIT",
+  "repository": "",
   "keywords": [
     "react",
     "react hooks",
     "request",
     "fetch"
-  ],
-  "author": "Xuqian Zhang",
-  "license": "MIT",
-  "scripts": {
-    "clean": "rm dist/bundle.js",
-    "start": "parcel src/index.html",
-    "build-prod": "parcel build src/index.js --target node"
-  },
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "parcel-bundler": "^1.12.3"
-  }
+  ]
 }

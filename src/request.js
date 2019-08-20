@@ -21,25 +21,27 @@ function parseJSON(response) {
  *
  * @param  {object} response   A response from a network request
  *
- * @return {object|undefined} Returns either the response, or throws an error
+ * @return {object|null} Returns either the response, or throws an error
  */
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
 
-  const error = new Error(response.statusText);
+  const error = new Error(response.status);
   error.response = response;
   error.data = response.text().then(text => {
     if (text) {
+
       try {
         return JSON.parse(text);
       } catch (error) {
-        console.log("parse text failed: " + text);
-        return { error: text };
+        // console.log("parse text failed: " + text);
+        return text;
       }
     } else {
-      return {};
+
+      return null;
     }
   });
 

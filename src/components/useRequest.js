@@ -47,10 +47,13 @@ const useRequest = ({
       const response = await request(url, options);
       setData(response);
       setLoading(false);
-      return response;
+      return { success: true, response };
     } catch (e) {
-      setError(e);
-      return {};
+      const errorBody = await e.data;
+      const error = { error: e.message, body: errorBody };
+      setError(error);
+      setLoading(false);
+      return { success: false, error };
     }
   };
 

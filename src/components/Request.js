@@ -12,7 +12,7 @@ import useRequest from "./useRequest";
  * <Request
  *   url="/url/to/source"
  *   method="GET"
- *   variables={{ page: 1, per_page: 10 }}
+ *   variables={{ page: 1, pageSize: 10 }}
  * >
  *  {({ loading, error, data }) => {
  *   return <component />;
