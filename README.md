@@ -16,13 +16,13 @@ $ npm install --save react-request-hook-client
 $ yarn add react-request-hook-client
 ```
 
-## Requirement
+## Requirements
 
 React >= 16.8.0
 
 ## Get Started
 
-### Use Request component
+### <Request /> component
 
 See live example on CodeSandBox:
 
