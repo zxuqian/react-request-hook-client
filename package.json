@@ -1,6 +1,6 @@
 {
   "name": "react-request-hook-client",
-  "version": "0.0.1-alpha3",
+  "version": "0.0.1-alpha6",
   "description": "A fetch based, declarative and hook powered to make HTTP request in React.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -29,9 +29,9 @@
     "react-dom": "^16.9.0"
   },
   "author": "Xuqian Zhang",
-  "homepage": "http://www.zxuqian.cn",
+  "homepage": "https://github.com/zxuqian/react-request-hook-client",
   "license": "MIT",
-  "repository": "",
+  "repository": "github:zxuqian/react-request-hook-client",
   "keywords": [
     "react",
     "react hooks",

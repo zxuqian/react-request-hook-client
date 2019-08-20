@@ -51,7 +51,7 @@ function Request({
 
   // if (!fire) return children(doRequest);
   return method.toUpperCase() === "GET"
-    ? children({ loading, error, data, refetch: doRequest })
+    ? children({ loading, error, data, doRequest })
     : children(doRequest, { loading, error, data });
 };
 
