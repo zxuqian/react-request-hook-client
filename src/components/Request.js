@@ -39,14 +39,20 @@ function Request({
   method = "GET",
   variables,
   headers = {},
-  fire = true // conditionally fire the rquest to prevent multiple fetch durign rerenders
+  fire = true, // conditionally fire the rquest to prevent multiple fetch durign rerenders
+  onComplete,
+  onSuccess,
+  onError
 }) {
   const { loading, error, data, doRequest } = useRequest({
     url,
     method,
     variables,
     headers,
-    fire
+    fire,
+    onComplete,
+    onSuccess,
+    onError
   });
 
   // if (!fire) return children(doRequest);

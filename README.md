@@ -22,11 +22,12 @@ React >= 16.8.0
 
 ## Get Started
 
-### use &lt;Request /&gt; component
 
 See live example on CodeSandBox:
 
 [![Edit react-request-hook-client-demo2](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-request-hook-client-demo2-oscn2?fontsize=14)
+
+### use &lt;Request /&gt; component
 
 #### GET
 
@@ -133,17 +134,19 @@ function PostDemoHooks() {
 
 #### Props
 
+| Props      | Type            | Default Value                        | Description                                                                                                                                                              |
+|------------|-----------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| url        | String          |                                      | The HTTP request url                                                                                                                                                     |
+| method     | String          | GET                                  | The HTTP request method, supports GET, POST, PUT, DELETE                                                                                                                 |
+| variables  | Object          |                                      | Variables for the request. If it is a GET request, variables will be converted to query strings. If it is a POST/PUT/DELETE request, variables will be the request body. |
+| headers    | Object          | {"Content-Type": "application/json"} | Additional headers                                                                                                                                                       |
+| fire       | Boolean         | TRUE                                 | Whether to fire the request immediately, used to finely control the time when the request will fire.                                                                     |
+| onSuccess  | (data) => Void  |                                      | Called on request successfully returned                                                                                                                                  |
+| onError    | (error) => Void |                                      | Called on error ocurred during the request                                                                                                                               |
+| onComplete | () => Void      |                                      | Called on request finished, whether it succeeded or failed                                                                                                               |                                                      |
 
-| Props     | Type    | Default Value                        | Description                                                                                                                                                              |
-|-----------|---------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| url       | String  | null                                 | The HTTP request url                                                                                                                                                     |
-| method    | String  | GET                                  | The HTTP request method, supports GET, POST, PUT, DELETE                                                                                                                 |
-| variables | Object  | null                                 | Variables for the request. If it is a GET request, variables will be converted to query strings. If it is a POST/PUT/DELETE request, variables will be the request body. |
-| headers   | Object  | {"Content-Type": "application/json"} | Additional headers                                                                                                                                                       |
-| fire      | Boolean | TRUE                                 | Whether to fire the request immediately, used to finely control the time when the request will fire.                                                                     |
 
-
-The `children` of the Request component must be a function, it has the following signature when the request method is GET:
+The `children` passed to the `<Request/>` component must be a function, it has the following signature when the request method is GET:
 
 ```javascript
 
@@ -167,22 +170,22 @@ POST and others:
 
 Arguments explanation:
 
-- loading - whether the request is pending.
-- error - whether the request encounters HTTP errors.
+- loading - Whether the request is pending.
+- error - Error details when request encounters HTTP errors.
 - data - Data returned by the server.
 
-The function **MUST** return a single enclosed React component according to the JSX rules, or null if no component will be returned.
+The function **MUST** return a single React component according to JSX rules, or null if no component will be returned.
 
 
 ### useRequest hook
 
-The `useRequest` hook takes the same props/arguments as Request component does, and returns the following object upon using:
+The `useRequest` hook takes the same props/arguments as the `<Request/>` component does, and returns the following object upon using:
 
 ```javascript
   const { loading, error, data, doRequest } = useRequest({url:, variables:, ...})
 ```
 
-In addition to specify `variables` at the declaration time, the `doRequest` function takes an additional variables object as its argument:
+In addition to specify `variables` at the declaration time, the `doRequest` function also takes an additional variables object as its argument:
 
 ```jsx
 <button

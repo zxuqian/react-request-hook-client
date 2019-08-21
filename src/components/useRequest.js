@@ -11,7 +11,10 @@ const useRequest = ({
   method = "GET",
   variables,
   headers = {},
-  fire = true // conditionally fire the rquest to prevent multiple fetch durign rerenders
+  fire = true, // conditionally fire the rquest to prevent multiple fetch durign rerenders
+  onComplete,
+  onSuccess,
+  onError
 }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
@@ -47,13 +50,17 @@ const useRequest = ({
       const response = await request(url, options);
       setData(response);
       setLoading(false);
+      onSuccess(response);
       return { success: true, response };
     } catch (e) {
       const errorBody = await e.data;
       const error = { error: e.message, body: errorBody };
       setError(error);
       setLoading(false);
+      onError && onError(error);
       return { success: false, error };
+    } finally {
+      onComplete && onComplete();
     }
   };
 
