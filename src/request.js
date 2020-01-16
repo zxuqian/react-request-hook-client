@@ -1,8 +1,8 @@
 /**
- * 
+ *
  * From react-boilerplate
  * https://github.com/react-boilerplate/react-boilerplate
- * 
+ *
  * Parses the JSON returned by a network request
  *
  * @param  {object} response A response from a network request
@@ -32,7 +32,6 @@ function checkStatus(response) {
   error.response = response;
   error.data = response.text().then(text => {
     if (text) {
-
       try {
         return JSON.parse(text);
       } catch (error) {
@@ -40,7 +39,6 @@ function checkStatus(response) {
         return text;
       }
     } else {
-
       return null;
     }
   });
